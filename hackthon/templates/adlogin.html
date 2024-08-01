@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Faculty login</title>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    
+ 
+    
+    <style>
+        body{
+            background-color: white;
+            margin:0;
+            padding:0;
+            
+            justify-content: center;
+            align-items: center;
+        }
+        .mainbox{
+            height:500px;
+            width:400px;
+            justify-content:center;
+            box-shadow: 0 0 5px lightgrey,0 0 25px lightgrey;
+            align-items:center;
+            border-radius:20px;
+            margin-top:80px;
+            background-color: aliceblue;
+        }
+        .box{
+            width:90%;
+            height:50px;
+            margin: 30px 0;
+            margin-left: 15px;
+            position: relative;
+            
+
+        }
+        .box input{
+            width:100%;
+            height:100%;
+            background:aliceblue;
+            border:none;
+            text-align:start;
+            outline:none;
+            box-shadow:  0 0 5px lightgrey,0 0 25px lightgrey;
+            border-radius: 40px;
+            font-size:16px;
+            color:lightgrey;
+            margin-left:0px;
+            font-size: 1.2rem;
+            color:black;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            
+
+        }
+        .box input::placeholder{
+            color:rgb(3, 1, 1);
+            
+
+            
+        }
+        .box i{
+            position:absolute;
+            right:20px;
+            top:50%;
+            transform: translateY(-50%);
+        }
+        .forgot{
+            display:flex;
+            justify-content: space-between;
+            font-size:14px;
+            margin:-15px 0 15px;
+        }
+        .forgot label input{
+            accent-color: rgb(2, 2, 2);
+            margin-right:3px;
+            
+        }
+        .forgot a{
+            color:#41B06E;
+            text-decoration:none;
+
+        }
+        .forgot a:hover{
+            text-decoration: underline;
+        }
+        .btn{
+            width:90%;
+            height:45px;
+            background:#8DECB4;
+            border:none;
+            outline:none;
+            border-radius:40px;
+            margin-left:15px;
+
+        }
+        .btn:hover{
+            transition: 2s;
+            background: linear-gradient(to right,#41B06E,#8DECB4);
+        }
+        .forgot{
+            text-align:center;
+            align-items:center;
+            justify-content: center;
+            font-size: 16px;
+        }
+        .register{
+            color:rgb(7, 7, 7);
+            text-align:center;
+            justify-content: center;
+            align-items: center;
+        }
+        .register a:hover{
+            text-decoration:underline;
+
+        }
+        .register a{
+            text-decoration: none;
+            color:#41B06E;
+        }
+        .btn{
+            cursor: pointer;
+        }
+        .btn:active{
+            transform: translateY(-5%);
+            
+        }
+       
+.prod{
+    display:flex;
+    justify-content:center;
+    align-items: center;
+    
+    width:100%;
+    height:100vh;
+
+}
+
+
+    </style>
+</head>
+<body>
+    
+    <div class="prod">
+    <div class="mainbox">
+        <h5 style="align-items:center;justify-content: center; text-align: center; font-size:35px;font-style: font-familyCambria, Cochin, Georgia, Times, 'Times New Roman', serif;color:rgb(6, 6, 6);">Faculty login</h5>
+        <div>
+            <form action="/adlogin" method="post" autocomplete="off">
+                <div class="box">
+                    <input type="email" placeholder="  Enter email" name="email" required>
+                    <i class='bx bxs-user'></i>
+                </div>
+                <div class="box">
+                    <input type="password" placeholder="  Enter password" name="password" required>
+                    <i class="bx bxs-lock-alt"></i>
+                </div>
+                <div class="forgot">
+                    
+                    <a href="#">Forgot Password?</a>
+                </div>
+                <button class="btn" type="submit">Login</button>
+                <div class="register">
+                     
+                </div>
+            </form>
+        </div>
+    </div>
+    </div>
+    
+</body>
+</html>

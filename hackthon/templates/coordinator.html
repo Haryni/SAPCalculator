@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Document</title>
+    <style>
+        *{
+            padding:0;
+            margin:0;
+        }
+        .main{
+            justify-content: center;
+            align-items:center;
+            display:grid;
+        }
+        .sub{
+            border:1px solid black;
+            text-align: center;
+            color:black;
+            background:aliceblue;
+            display:flex;
+            width:1400px;
+            justify-content: center;
+            align-items:center;
+        }
+        header{
+  height: 85vh;
+  width: 90%;
+  background: rgba(255, 255, 255, 0.1);
+  z-index: 12;
+  border-radius: 25px;
+  margin: auto;
+  position: relative;
+}
+header .navbar{
+  margin: auto;
+  width: 100%;
+  padding: 35px 50px;
+  border-radius: 25px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgb(177, 218, 251);
+}
+        .navbar .menu{
+  display: flex;
+  flex-wrap: wrap;
+}
+.navbar .logo a{
+  text-decoration: none;
+  font-size: 22px;
+  color: #488d99;
+  font-weight: 500;
+}
+.navbar .menu li{
+  list-style: none;
+  margin: 0 6px;
+}
+.navbar .menu a{
+  color: #1d515d;
+  text-decoration: none;
+  font-size: 17px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+.insideimage{
+    height:40px;
+    width:50px;
+}
+
+pre{
+    font-size:16px;
+
+}
+.container {
+  position: relative;
+}
+
+
+
+.close {
+  position: absolute;
+  top: 15px;
+  right: 35px;
+  color: #fff;
+  font-size: 30px;
+  font-weight: bold;
+  cursor: pointer;
+}
+.btnn{
+    background-color: rgb(157, 246, 246);
+    border-radius:5px;
+
+}
+body {
+  font-family: sans-serif;
+  margin: 0;
+  padding: 20px;
+}
+
+#openModal {
+  background-color: #3498db;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#openModal:hover {
+  background-color: #2980b9;
+}
+
+#image-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+#image-modal.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+#modal-image {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+#closeModal {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  color: white;
+  background-color: #e74c3c;
+  padding: 5px 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#closeModal:hover {
+  background-color: #c0392b;
+}
+table{
+    border:1px solid black;
+    padding:15px;
+}
+#customers {
+  font-family: Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+#customers td, #customers th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+#customers tr:nth-child(even){background-color: #f2f2f2;}
+
+#customers tr:hover {background-color: #ddd;}
+
+#customers th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #357dc0;
+  color: white;
+}
+.accept{
+    width:40px;
+    height:40px;
+    background-color: lightgreen;
+    border-radius: 50%;
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+    cursor: pointer;
+}
+.reject{
+    width:40px;
+    height:40px;
+    background-color:red;
+    border-radius: 50%;
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+    cursor: pointer;
+
+}
+.name{
+   font-size:2rem;
+   text-align: center;
+}
+.down{
+  width:50px;
+  height:50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2rem;
+  background-color: lightgreen;
+  margin-left:20px;
+  border-radius: 50%;
+  cursor: pointer;
+
+}
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+          <div>
+            <a class="navbar-brand" href="#">
+                <img src="{{url_for('static',filename='image/logo.jpg')}}" alt="none" width="70px" height="70px">
+            </a>
+      </div>
+          <div class="logo"><a href="#" style="margin-right:100px;font-size:30px;">Kongu Engineering College</a></div>
+          <ul class="menu">
+            <li><a href="#" style="float:right;">Home</a></li>
+          </ul>
+        </nav>
+    <main>
+      {{session['select']}}
+     <h1 class="name"> name:{{session['coname']}}</h1>
+     <span onclick="exportToExcel()" class="down"><i class="fa-solid fa-download"></i></span>
+    <div class="main">
+        <div class="sub">
+            <table id="customers">
+            <tr>
+                <th>Roll No</th>
+                <th>Name</th>
+                <th>Year</th>
+                <th>Event</th>
+                <th>Status</th>
+                <th>Month</th>
+                <th>SAP</th>
+                <th>View Images</th>
+                <th>Accept</th>
+                <th>Reject</th>
+
+            </tr>
+
+            {%if student_data%}
+                 {%for i in student_data%}
+                 
+                         <tr>
+                             <td>{{i['roll']}}</td>   
+                             <td>{{i['name']}}</td>   
+                             <td>{{i['year']}}</td>   
+                             <td>{{i['act']}}</td>   
+                             <td>{{i['status']}}</td>   
+                             <td>May</td>   
+                             <td>{{i['sap']}}</td>   
+                             <td><button class="btnn" id="openModal">View Image</button></td>  
+                             <form action="/coordinator" method="post">
+                              <td><input type="submit" value="Accepted" id="accept"  class="accept" name="accept"></td>
+                              <td><input type="submit" value="Rejected" id="reject" class="reject" name="rej"></td>
+                           </form>
+                            
+
+                 {%endfor%}
+            {%endif%}
+            {%if imgdata%}
+                  {%for img in imgdata%}
+
+                        <div id="image-modal" class="hidden">
+                          <img id="modal-image" src="{{ url_for('static', filename='image/'+ img['filename']) }}" alt="Uploaded Image" style="height:800px; width:800px;">
+                          <button id="closeModal">Close</button>
+                        </div>
+                        
+                  {%endfor%}
+            {%endif%} 
+          </tr>
+            </table>
+            
+
+        </div>
+    </div>
+    </main>
+    <script>
+    const openModalButton = document.getElementById('openModal');
+const imageModal = document.getElementById('image-modal');
+const closeModalButton = document.getElementById('closeModal');
+
+openModalButton.addEventListener('click', () => {
+  imageModal.classList.add('active');
+});
+
+closeModalButton.addEventListener('click', () => {
+  imageModal.classList.remove('active');
+});
+
+function send(){
+    alert("Response send successfully")
+}
+function deleteRow(btn) {
+    var row = btn.parentNode.parentNode; // Get the parent <tr> element
+    row.parentNode.removeChild(row); // Remove the <tr> element
+}
+
+function exportToExcel() {
+            const table = document.getElementById('customers');
+            const rows = table.getElementsByTagName('tr');
+            let csvContent = "data:text/csv;charset=utf-8,";
+
+            for (const row of rows) {
+                const cells = row.getElementsByTagName('td');
+                const rowData = [];
+                for (const cell of cells) {
+                    rowData.push(cell.innerText);
+                }
+                csvContent += rowData.join(",") + "\n";
+            }
+
+            const encodedUri = encodeURI(csvContent);
+            const link = document.createElement("a");
+            link.setAttribute("href", encodedUri);
+            link.setAttribute("download", "table.csv");
+            document.body.appendChild(link); // Required for Firefox
+            link.click();
+        }
+</script>
+
+ 
+</body>
+</html>
+
+
+     

@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View Images</title>
+    <style>
+        *{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family:Arial, Helvetica, sans-serif;
+  background-repeat:repeat
+}
+        body {
+  height: 100vh;
+  width: 100%;
+  background-image: url(immm.jpg);
+}
+
+       .main{
+    
+        grid-template-columns: auto auto auto;
+        align-items: center;
+        justify-content:center;
+        margin-left:auto;
+        margin-right:auto;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-gap: 20px;
+
+        
+       }
+       .sub{
+        border:1px solid black;
+        border-radius:10px;
+        height:400px;
+        width:400px;
+       }
+       * { box-sizing: border-box; }
+body {  background-image:url(back.jpg); margin: 0; padding: 3em 1em; box-shadow: rgba(241, 239, 239, 0.4) 3px 3px 19px 0px ,rgba(252, 252, 252, 0.4) -3px -3px 19px 0px;
+            box-shadow: rgb(245, 245, 246) 3px 3px 19px 0px inset, rgba(253, 253, 255, 0.5) -3px -3px 19px 1px inset;}
+ul { list-style: none; margin: 0; padding: 0;}
+figure { margin: 0; }
+figcaption { font-style: italic;  font-weight: bold; font-size: 0.8em; color: rgb(253, 253, 253); line-height: 1.4; }
+
+.grid {
+  display: grid;
+  grid-auto-flow: column; 
+  grid-auto-columns: 90%;
+  box-shadow: rgba(250, 249, 249, 0.4) 3px 3px 19px 0px ,rgba(247, 246, 246, 0.4) -3px -3px 19px 0px;
+            box-shadow: rgb(240, 240, 241) 3px 3px 19px 0px inset, rgba(249, 249, 250, 0.5) -3px -3px 19px 1px inset;
+  grid-gap: 1em;
+  overflow-x: scroll; 
+  font-weight: bold;
+  -webkit-overflow-scrolling: touch; 
+  padding: 2em 1em;
+  background-image:url(wallpaper.jpg);
+  
+  @media all and (min-width: 600px) {
+    grid-auto-flow: initial; 
+    grid-template-columns: repeat(auto-fit, minmax(auto,20em)); 
+    justify-content: center;
+  }
+  
+  &__figure {
+    display: grid;
+    grid-template-rows: 15em 1fr; 
+    grid-gap: 1em;
+    
+    img {
+      width: 500px;
+      height: 500px;
+      
+    }
+  }
+}
+
+
+    </style>
+</head>
+<body>
+ 
+    <div>
+        <h1 style="text-align: center; justify-content: center; color:rgb(2, 3, 48);font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;">Uploaded Images</h1>
+    </div>
+    <ul class="grid">
+        {% if images %}
+              {% for image in images %}
+                     <li>
+                       <figure class="grid__figure">
+                        <a href="{{ url_for('static', filename='image/'+ image['filename1']) }}"><img src="" alt="Uploaded Image" style="max-width: 500px;"weight="200"height="150"></a> 
+                        
+                         <figcaption>Certificate 1</figcaption>
+                       </figure>
+                     </li>
+              {% endfor %}
+        {% else%}
+                <h1>No Images Uploaded</h1>
+         {% endif %}
+      </ul>
+
+   
+
+ 
+
+ 
+
+
+    
+</body>
+</html>

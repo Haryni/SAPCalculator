@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>reset password</title>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    
+ 
+    
+    <style>
+        body{
+            
+            margin:0;
+            padding:0;
+            backdrop-filter: blur(aliceblue, rgb(172, 223, 242),rgb(139, 223, 249));
+            justify-content: center;
+            align-items: center;
+            background-color: #d9e8f8;
+            box-shadow: #205295 3px 3px 19px 0px inset, #205295 -3px -3px 19px 1px inset;
+        box-shadow: #205295 3px 3px 19px 0px ,#205295 -3px -3px 19px 0px;
+        }
+        .mainbox{
+            height:500px;
+            width:400px;
+            justify-content:center;
+            align-items:center;
+            border-radius: 20PX;
+            
+            
+            border:2px solid lightgray;
+            box-shadow: 0 0 0 5px, #2C74B3;
+            margin-top:100px;
+            backdrop-filter: blur(20px);
+            background-color:#f7eadb ;
+            box-shadow: #205295 3px 3px 19px 0px inset, #205295 -3px -3px 19px 1px inset;
+        box-shadow: #205295 3px 3px 19px 0px ,#205295 -3px -3px 19px 0px;
+        }
+        .box{
+            width:90%;
+            height:50px;
+            margin: 30px 0;
+            margin-left: 15px;
+            position: relative;
+            
+
+        }
+        .box input{
+            width:100%;
+            height:100%;
+            background:transparent;
+            border:none;
+            outline:none;
+            border:2px solid lightgrey;
+            border-radius: 20px;
+            font-size:16px;
+            color:black;
+            background-color: aliceblue;
+            
+
+        }
+        .box input::placeholder{
+            color:black;
+            
+        }
+        .box i{
+            position:absolute;
+            right:20px;
+            top:50%;
+            transform: translateY(-50%);
+        }
+        .forgot{
+            display:flex;
+            justify-content: space-between;
+            font-size:14px;
+            margin:-15px 0 15px;
+        }
+        .forgot label input{
+            accent-color: lightgrey;
+            margin-right:3px;
+            
+        }
+        .forgot a{
+            color:black;
+            text-decoration:none;
+
+        }
+        .forgot a:hover{
+            text-decoration: underline;
+        }
+        .btn{
+            width:90%;
+            height:45px;
+            background: #0A2647;
+            border:none;
+            outline:none;
+            border-radius:20px;
+            margin-left:15px;
+            color: aliceblue;
+
+        }
+        .forgot{
+            text-align:center;
+            align-items:center;
+            justify-content: center;
+            font-size: 16px;
+        }
+        .register{
+            color:black;
+            text-align:center;
+            justify-content: center;
+            align-items: center;
+        }
+        .register a:hover{
+            text-decoration:underline;
+
+        }
+        .register a{
+            text-decoration: none;
+            color:black;
+        }
+        .btn{
+            cursor: pointer;
+        }
+        .btn:active{
+            transform: translateY(-5%);
+            
+        }
+        .navbar{
+  position: relative;
+  height: 50px;
+  width: 100%;
+  background: #fff;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+.navbar ul{
+  position: relative;
+  display: flex;
+}
+.navbar ul li{
+  position: relative;
+  list-style-type: none;
+}
+.navbar ul li a{
+  position: relative;
+  height: 120px;
+  width: 90px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+}
+.navbar ul li a i{
+  position: absolute;
+  font-size: 38px;
+  color: #0563af;
+}
+ul li a i.activeIcon{
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.6s ease;
+  transition-delay: 0.2s;
+}
+.navbar ul li.active a i{
+  opacity: 1;
+  pointer-events: auto;
+}
+.navbar ul .indicator{
+  position: absolute;
+  bottom: -19px;
+  left: 34px;
+  height: 36px;
+  width: 25px;
+  background: #7d2ae8;
+  border-radius: 50%;
+  transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+ul .indicator::before{
+  content: "";
+  position: absolute;
+  left: -15px;
+  bottom: 50%;
+  height: 22px;
+  width: 20px;
+  background: #fff;
+  border-bottom-right-radius: 20px;
+  box-shadow: 0 10px 0 #7d2ae8;
+}
+ul .indicator::after{
+  content: "";
+  position: absolute;
+  right: -15px;
+  bottom: 50%;
+  height: 22px;
+  width: 20px;
+  background: #fff;
+  border-bottom-left-radius: 20px;
+  box-shadow: 0 10px 0 #7d2ae8;
+}
+.prod{
+    display:flex;
+    justify-content:center;
+    align-items: center;
+    
+    width:100%;
+    height:100vh;
+
+}
+
+
+    </style>
+</head>
+<body>
+    
+    <div class="prod">
+    <div class="mainbox">
+        <h5 style="align-items:center;justify-content: center; text-align: center; font-size:35px;font-style:italic;font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;color:black">Reset Password</h5>
+        <div>
+            <form>
+                
+                <div class="box">
+                    <input type="password" placeholder=" Enter existing password"  required>
+                    <i class="bx bxs-lock-alt"></i>
+                </div>
+                <div class="box">
+                    <input type="password" placeholder=" Enter new password"  required>
+                    <i class="bx bxs-lock-alt"></i>
+                </div>
+                <div class="box">
+                    <input type="password" placeholder=" Confirm new password"  required>
+                    <i class="bx bxs-lock-alt"></i>
+                </div>
+                
+                <button class="btn" type="submit">Submit</button>
+                
+            </form>
+        </div>
+    </div>
+    </div>
+    
+</body>
+</html>

@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<title>ADVISOR</title>
+<style>
+    
+    body {
+            
+      
+  font-family: 'lato', sans-serif;
+  background-color: #d9e8f8;
+}
+         
+  * {
+  box-sizing: border-box;
+}
+input{
+    justify-content: center;
+    align-items: center;
+    gap:50px;
+    box-shadow: #205295 3px 3px 19px 0px inset, #205295 -3px -3px 19px 1px inset;
+        box-shadow: #205295 3px 3px 19px 0px ,#205295 -3px -3px 19px 0px;
+
+}
+#searchcol1{
+    background-color: #060606;
+    border: 5px solid #ddd;
+
+}
+.navbar {
+  overflow: hidden;
+  background-color: #0A2647; 
+  color: aliceblue;
+  box-shadow: 0 8px 16px 0 #9AC8CD; 
+}
+
+.navbar .logo {
+  display: inline-block;
+  height: 50px; 
+  margin-right: 20px;
+  font-weight: bold;
+  box-shadow: #205295 3px 3px 19px 0px inset, #205295 -3px -3px 19px 1px inset;
+        box-shadow: #205295 3px 3px 19px 0px ,#205295 -3px -3px 19px 0px;
+}
+
+.navbar a {
+  float: left;
+  display: block;
+  color: aliceblue;
+  text-align: center;
+  padding: 14px 20px;
+  text-decoration: none;
+}
+
+.navbar a:hover {
+  background-color: rgba(255, 255, 255, 0.5); 
+  color: black;
+}
+.container {
+  margin: 50px auto;
+  width: 600px;
+  perspective: 1000px; 
+}
+
+.title {
+  text-align: center;
+  padding: 20px;
+  background-color: #f7eadb;
+  color: rgb(1, 4, 41);
+  border-radius: 40px;
+  transform-origin: center; 
+  box-shadow: #205295 3px 3px 19px 0px inset, #205295 -3px -3px 19px 1px inset;
+        box-shadow: #205295 3px 3px 19px 0px ,#205295 -3px -3px 19px 0px
+}
+.container {
+    height: fit-content;
+  max-width: fit-content;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+.my{
+   width:300px;
+   height:50px;
+   display: flex;
+   flex-direction: row;
+}
+.my input{
+    width:80%;
+    height:80%;
+    background-color: #f7eadb;
+    border: 15px;
+    border-color: #060606;
+    outline: none;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    margin-left: 10px;
+    font-size: xx-large;
+   
+
+}
+#myInput {
+  background-color: #f7eadb;
+  background-position: 10px 10px;
+  background-repeat: no-repeat;
+  width: 100px;
+  font-size: 50px;
+  padding: 12px 20px 12px 40px;
+  background-color: #f7eadb;
+  border: 10px solid #ddd;
+  margin-bottom: 12px;
+}
+.table-header {
+    background-color:#0A2647;
+    font-size: 14px;
+    text-transform: uppercase;
+    text-align: center;
+    letter-spacing: 0.03em;
+    color: aliceblue;
+  }
+
+#myTable {
+    box-shadow: #205295 3px 3px 19px 0px inset, #205295 -3px -3px 19px 1px inset;
+        box-shadow: #205295 3px 3px 19px 0px ,#205295 -3px -3px 19px 0px;
+  
+  width: 100%;
+  border: 1px solid #070606;
+  background-color: #f7eadb;
+  font-size: 18px;
+}
+
+#myTable th, #myTable td {
+  text-align: left;
+  padding: 12px;
+}
+
+#myTable tr {
+  border-bottom: 1px solid #070707;
+}
+.down{
+  width:50px;
+  height:50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2rem;
+  background-color: lightgreen;
+  margin-left:20px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+</style>
+</head>
+<body>
+  <div class="navbar" style="display:flex;">
+    <div>
+    <img src="{{url_for('static',filename='image/logo.jpg')}}" alt="Logo" class="logo">
+    </div>
+    <a href="">KONGU ENGINEERNG COLLEGE</a>
+    <a href="">SWITCH</a>
+   
+  </div>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link rel="stylesheet" href="">
+<br><br>
+<html lang="en">
+    <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      
+      <link rel="stylesheet" href="styles.css">
+    </head>
+    <body>
+    
+    <div class="container">
+      <h1 class="title">Student Activity point-Advisor</h1>
+    </div>
+<div class="my">
+<input type="text" id="searchCol1" placeholder="Search reg.no">
+<span onclick="exportToExcel()" class="down"><i class="fa-solid fa-download"></i></span>
+</div>
+
+
+<br><br><br>
+
+<table id="myTable">
+  <thead>
+    <tr class="table-header">
+        
+      <th>S.no</th>
+      
+      <th>reg.no</th>
+
+      
+      <th>name</th>
+      <th>SAP</th>
+    </tr>
+  </thead>
+  {% if user_sap %}
+       {% for student in user_sap %}
+
+              <tbody>
+                <tr class="table-row">
+                  <td>{{ student['pid'] }}</td>
+      
+                  <td>{{ student['roll'] }}</td>
+                  <td>{{ student['name'] }}</td>
+                  <td>{{ student['sap'] }}</td>
+                </tr>
+    
+              </tbody>
+       {% endfor %}
+  
+  {% endif %}    
+</table>
+
+
+<script>
+
+  var inputCol1 = document.getElementById("searchCol1");
+
+
+  
+
+  var tableRows = document.querySelectorAll("#myTable tbody tr");
+
+  inputCol1.addEventListener("input", filterTable);
+ 
+  
+  function filterTable() {
+    var filterCol1 = inputCol1.value.toUpperCase();
+    
+    
+    tableRows.forEach(function(row) {
+      var col1 = row.cells[1].textContent.toUpperCase();
+   
+     
+      if (col1.includes(filterCol1)) {
+        row.style.display = "";
+      } else {
+        row.style.display = "none";
+      }
+    });
+  }
+  
+        function exportToExcel() {
+            const table = document.getElementById('myTable');
+            const rows = table.getElementsByTagName('tr');
+            let csvContent = "data:text/csv;charset=utf-8,";
+
+            for (const row of rows) {
+                const cells = row.getElementsByTagName('td');
+                const rowData = [];
+                for (const cell of cells) {
+                    rowData.push(cell.innerText);
+                }
+                csvContent += rowData.join(",") + "\n";
+            }
+
+            const encodedUri = encodeURI(csvContent);
+            const link = document.createElement("a");
+            link.setAttribute("href", encodedUri);
+            link.setAttribute("download", "table.csv");
+            document.body.appendChild(link); // Required for Firefox
+            link.click();
+        }
+</script>
+
+</body>
+</html>
+ 

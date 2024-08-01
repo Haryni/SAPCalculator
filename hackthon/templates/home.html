@@ -1,0 +1,826 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Student's page</title>
+</head>
+<script>function populateSecondDropdown() {
+    var firstDropdown = document.getElementById("first-dropdown");
+    var secondDropdown = document.getElementById("second-dropdown");
+
+    // Clear existing options
+    secondDropdown.innerHTML = "";
+
+    // Get selected option from first dropdown
+    var selectedOption = firstDropdown.value;
+
+    // Populate second dropdown based on selected option
+    if (selectedOption === "Paper Presentation") {
+        // Add options for Option 1
+        var option1Values = ["--SELECT STATUS--","Submitted", "Presented-Inside", "Presented-Outside","Presented-Premier","Prize-inside","Prize-outside","Prize-premier"];
+        for (var i = 0; i < option1Values.length; i++) {
+            var option = document.createElement("option");
+            option.text = option1Values[i];
+            option.value = option1Values[i];
+            secondDropdown.add(option);
+        }
+    } else if (selectedOption === "Project Presentation") {
+        // Add options for Option 2
+        var option2Values = ["--SELECT STATUS--", "Submitted", "Presented-Inside", "Presented-Outside","Presented-Premier","Prize-inside","Prize-outside","Prize-premier"];
+        for (var i = 0; i < option2Values.length; i++) {
+            var option = document.createElement("option");
+            option.text = option2Values[i];
+            option.value = option2Values[i];
+            secondDropdown.add(option);
+        }
+    } else if (selectedOption === "Techno Managerial Events") {
+        // Add options for Option 3
+        var option3Values = ["--SELECT STATUS--","Participated-inside", "Participated-outside", "Participated-State","Participate-National/International","Prizes-inside","Prizes-outside","Prizes-state","Prizes-National/International"];
+        for (var i = 0; i < option3Values.length; i++) {
+            var option = document.createElement("option");
+            option.text = option3Values[i];
+            option.value = option3Values[i];
+            secondDropdown.add(option);
+        }
+    }
+    else if (selectedOption === "Sporst & Games") {
+        // Add options for Option 3
+        var option3Values = ["--SELECT STATUS--","Participated-inside", "Participated-outside", "Participated-State","Participate-National/International","Prizes-inside","Prizes-outside","Prizes-state","Prizes-National/International"];
+        for (var i = 0; i < option3Values.length; i++) {
+            var option = document.createElement("option");
+            option.text = option3Values[i];
+            option.value = option3Values[i];
+            secondDropdown.add(option);
+        }
+    }
+    
+    else if (selectedOption === "Membership") {
+        // Add options for Option 3
+        var option3Values = ["--SELECT STATUS--","NCC/NSS", "Professional Society", "Clubs"];
+        for (var i = 0; i < option3Values.length; i++) {
+            var option = document.createElement("option");
+            option.text = option3Values[i];
+            option.value = option3Values[i];
+            secondDropdown.add(option);
+        }
+    }
+
+    else if (selectedOption === "Leadership") {
+        // Add options for Option 3
+        var option3Values = ["--SELECT STATUS--","Chairman", "Vice Chairman", "EC Member","Class Representative"];
+        for (var i = 0; i < option3Values.length; i++) {
+            var option = document.createElement("option");
+            option.text = option3Values[i];
+            option.value = option3Values[i];
+            secondDropdown.add(option);
+        }
+    }
+
+
+
+    else if (selectedOption === "Online Course") {
+        // Add options for Option 3
+        var option3Values = ["--SELECT STATUS--","Value Added Course", "One Credit", "Two Credit","More than Two credit"];
+        for (var i = 0; i < option3Values.length; i++) {
+            var option = document.createElement("option");
+            option.text = option3Values[i];
+            option.value = option3Values[i];
+            secondDropdown.add(option);
+        }
+    }
+
+
+    else if (selectedOption === "Project to patent") {
+        // Add options for Option 3
+        var option3Values = ["--SELECT STATUS--","Applied", "Published", "Obtained"];
+        for (var i = 0; i < option3Values.length; i++) {
+            var option = document.createElement("option");
+            option.text = option3Values[i];
+            option.value = option3Values[i];
+            secondDropdown.add(option);
+        }
+    }
+
+
+    else if (selectedOption === "Govt Exams") {
+        // Add options for Option 3
+        var option3Values = ["--SELECT STATUS--","Appeared", "Qualified IN Exam", "Good Rank","Cleared Exams"];
+        for (var i = 0; i < option3Values.length; i++) {
+            var option = document.createElement("option");
+            option.text = option3Values[i];
+            option.value = option3Values[i];
+            secondDropdown.add(option);
+        }
+    }
+
+    else if (selectedOption === "Placement and Internship") {
+        // Add options for Option 3
+        var option3Values = ["--SELECT STATUS--","Written Test cleared", "Placed", "Placed With Intership","Placed without Internship"];
+        for (var i = 0; i < option3Values.length; i++) {
+            var option = document.createElement("option");
+            option.text = option3Values[i];
+            option.value = option3Values[i];
+            secondDropdown.add(option);
+        }
+    }
+
+    else if (selectedOption === "Enterpreneurship") {
+        // Add options for Option 3
+        var option3Values = ["--SELECT STATUS--","Workshop", "Register for Start-up", "Released Product"];
+        for (var i = 0; i < option3Values.length; i++) {
+            var option = document.createElement("option");
+            option.text = option3Values[i];
+            option.value = option3Values[i];
+            secondDropdown.add(option);
+        }
+    }
+
+    else if (selectedOption === "Social Acitivites") {
+        // Add options for Option 3
+        var option3Values = ["--SELECT STATUS--","Blood Donation", "NCC/NSS Camp", "More than 2 Weeks for camp"];
+        for (var i = 0; i < option3Values.length; i++) {
+            var option = document.createElement("option");
+            option.text = option3Values[i];
+            option.value = option3Values[i];
+            secondDropdown.add(option);
+        }
+    }
+     else if(selectedOption === "NIL"){
+        var option3Values = ["--SELECT STATUS--","NIL"];
+        for (var i = 0; i < option3Values.length; i++) {
+            var option = document.createElement("option");
+            option.text = option3Values[i];
+            option.value = option3Values[i];
+            secondDropdown.add(option);
+     }
+    }
+}
+
+function selectdrop(){
+          var selectedDrop = document.getElementById("second-dropdown");
+          var selectop=document.getElementById("sap");
+      
+          var selectedOption = selectedDrop.value;
+          //paper
+          if(selectedOption === "Submitted"){
+              selectop.value = "2";
+          }
+          else if(selectedOption === "Presented-Inside") {
+            selectop.value = "5";
+          }
+          else if(selectedOption === "Presented-Outside"){
+              selectop.value = "10"
+          }
+          else if(selectedOption === "Presented-Premier"){
+              
+              selectop.value = "20"
+ 
+
+          }
+          else if(selectedOption === "Prize-inside"){
+              selectop.value = "20"
+          }
+          else if(selectedOption === "Prize-outside"){
+              selectop.value = "30"
+          }
+          else if(selectedOption === "Prize-premier"){
+              selectop.value = "50"
+          }
+          //project
+          if(selectedOption === "Submitted"){
+              selectop.value = "5"
+          }
+          else if(selectedOption === "Presented-Inside"){
+              selectop.value = "10"
+          }
+          else if(selectedOption === "Presented-Outside"){
+              selectop.value="15"
+          }
+          else if(selectedOption === "Presented-Premier"){
+              selectop.value = "20"
+          }
+          else if(selectedOption === "Prize-inside"){
+              selectop.value = "20"
+          }
+          else if(selectedOption === "Prize-outside"){
+              selectop.value = "30"
+          }
+          else if(selectedOption === "Prize-premier"){
+              selectop.value = "50"
+          }
+
+          //Techno managerial
+          if(selectedOption === "Participated-inside"){
+              selectop.value = "2"
+          }
+          else if(selectedOption === "Participated-outside"){
+              selectop.value = "5"
+          }
+          else if(selectedOption === "Participated-State"){
+              selectop.value = "10"
+          }
+          else if(selectedOption === "Participate-National/International"){
+              selectop.value = "20"
+          }
+          else if(selectedOption === "Prizes-inside"){
+              selectop.value = "10"
+          }
+          else if(selectedOption === "Prizes-outside"){
+              selectop.value = "20"
+          }
+          else if(selectedOption === "Prizes-state"){
+              selectop.value = "30"
+          }
+          else if(selectedOption === "Prizes-National/International"){
+              selectop.value = "50"
+          }
+          
+          //Sport
+          if(selectedOption === "Participated-inside"){
+              selectop.value = "2"
+          }
+          else if(selectedOption === "Participated-outside"){
+              selectop.value = "10"
+          }
+          else if(selectedOption === "Participated-State"){
+              selectop.value = "20"
+          }
+          else if(selectedOption === "Participate-National/International"){
+              selectop.value = "50/100"
+          }
+          else if(selectedOption === "Prizes-inside"){
+              selectop.value = "5"
+          }
+          else if(selectedOption === "Prizes-outside"){
+              selectop.value = "20"
+          }
+          else if(selectedOption === "Prizes-state"){
+              selectop.value = "40"
+          }
+          else if(selectedOption === "Prizes-National/International"){
+              selectop.value = "100"
+          }
+
+          //membership
+          if(selectedOption === "NCC/NSS"){
+              selectop.value = "20"
+          }
+          else if(selectedOption === "Professional Society"){
+              selectop.value = "5"
+          }
+          else if(selectedOption === "Clubs"){
+              selectop.value = "2"
+          }
+
+          //Leadership
+          if(selectedOption === "Chairman"){
+              selectop.value = "30"
+          }
+          else if(selectedOption === "Vice Chairman"){
+              selectop.value = "20"
+          }
+          else if(selectedOption === "EC Member"){
+              selectop.value = "10"
+          }
+          else if(selectedOption === "Class Representative"){
+              selectop.value = "10"
+          }
+
+          //Online course
+          if(selectedOption === "Value Added Course"){
+              selectop.value = "5"
+          }
+          else if(selectedOption === "One Credit"){
+              selectop.value = "10"
+          }
+          else if(selectedOption === "Two Credit"){
+              selectop.value = "20"
+          }
+          else if(selectedOption === "More than Two credit"){
+              selectop.value = "30"
+          }
+          //project to paper to patent
+          if(selectedOption === "Applied"){
+              selectop.value = "10"
+          }
+          else if(selectedOption === "Published"){
+              selectop.value = "50"
+          }
+          else if(selectedOption === "Obtained"){
+              selectop.value = "100"
+          }
+          //govt exams
+          if(selectedOption === "Appeared"){
+              selectop.value = "5"
+          }
+          else if(selectedOption === "Qualified IN Exam"){
+              selectop.value = "30"
+          }
+          else if(selectedOption === "Good Rank"){
+              selectop.value = "100"
+          }
+          else if(selectedOption === "Cleared Exams"){
+              selectop.value = "100"
+          }
+          //Placement
+          if(selectedOption === "Written Test Cleared"){
+              selectop.value = "5"
+          }
+          else if(selectedOption === "Placed"){
+              selectop.value = "40"
+          }
+          else if(selectedOption === "Placed With Internship"){
+              selectop.value = "50"
+          }
+          else if(selectedOption === "Placed without Internship"){
+              selectop.value = "20"
+          }
+
+          //Entrepreneurship
+          if(selectedOption === "Workshop"){
+              selectop.value = "10"
+          }
+          else if(selectedOption === "Register for Start-up"){
+              selectop.value = "50"
+          }
+          else if(selectedOption === "Released Product"){
+              selectop.value = "100"
+          }
+          //Social
+          if(selectedOption === "Blood Donation"){
+              selectop.value = "5"
+          }
+          else if(selectedOption === "NCC/NSS Camp"){
+              selectop.value = "30"
+          }
+          else if(selectedOption === "More than 2 Weeks for Camp"){
+              selectop.value = "50"
+          }
+          else if(selectedOption === "NIL"){
+                   selectop.value ="0"
+          }
+          
+          
+
+    }
+    function populatethirdDropdown() {
+            // Your existing code for populating the second dropdown
+            
+            // Get the selected option from the second dropdown
+            var selectedOption = document.getElementById("second-dropdown").value;
+            var thirdDropdown = document.getElementById("third-dropdown");
+
+            // Check if the selected option is "Premier"
+            if (selectedOption === "Presented-Premier" || selectedOption === "Prize-premier") {
+                // Show the third dropdown if "Premier" is selected
+                thirdDropdown.style.display = "block";
+            } else {
+                // Hide the third dropdown for other selections
+                thirdDropdown.style.display = "none";
+            }
+        }
+
+    
+    function add() {
+    var file2Label = document.querySelector('.file2');
+    if (file2Label.style.display === 'none' || file2Label.style.display === '') {
+        file2Label.style.display = 'block';
+    } else {
+        file2Label.style.display = 'none';
+    }
+}
+</script>
+<style>
+        *{
+    margin:0;
+    padding:0;
+
+}
+body{
+    background-color:aliceblue;
+    opacity:1;
+    height: auto;
+}
+.nav-item{
+    margin-left:60px;
+    color:white;
+    font-size: 1.4rem;
+}
+.nav-link:hover{
+    color:aqua;
+}
+.nav-link{
+    color:black;
+    font-family: "Jost", sans-serif;
+    font-optical-sizing: auto;
+    font-weight:bolder;
+    font-style: normal;
+    
+}
+
+.dropdown-item{
+    color:black;
+    
+}
+.dropdown-item:hover{
+    color:aqua;
+    background: none;
+}
+
+.logo{
+    width:60px;
+    height:60px;
+    border-radius: 50%;
+}
+ 
+.slidebar{
+    background-color: transparent;
+    color:white;
+     
+    backdrop-filter: blur(10px);
+
+}
+.btn-close{
+    color:white;
+}
+.body1{
+  width:100%;
+  height:100vh;
+  overflow: hidden;
+  display: flex;
+  justify-content:flex-end;
+  align-items: center;
+
+}
+.sap-container{
+     
+    height:100vh;
+    display: flex;
+    flex-direction: column;
+    margin-right: 50px;
+    justify-content: center;
+    align-items: center;
+
+}
+.profile{
+  width:300px;
+  height:300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  overflow: hidden;
+  margin-top: 20px;
+  border:lightgrey;
+  
+  box-shadow: 0 0 5px lightgrey,0 0 25px lightgrey;
+  
+   
+  cursor: pointer;
+}
+.profile span{
+  font-size: 1.5rem;
+  font-weight: bolder;
+  margin-top: -50px;
+  width:80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height:80px;
+  border-radius: 50%;
+  background-color:lightskyblue;
+  border-color:black;
+}
+.name{
+    font-size: 2rem;
+    font-weight: bolder;
+    margin-left: 10px;
+    
+}
+.cal-container{
+ height:auto;
+  display:flex;
+  margin-right:100px;
+  flex-direction:row;
+}
+.cal{
+  width:800px;
+  height:650px;
+   
+  border:lightgrey;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 60px;
+  box-shadow: 0 0 5px lightgrey,0 0 25px lightgrey;
+   
+}
+    
+form{
+  width:100%;
+  height:100%;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+flex-direction: column;
+
+}
+.box{
+    width:100%;
+    height:100%;
+    display: flex;
+    flex-direction: row;
+
+}
+.first{
+    width:50%;
+    height:100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border-right: 1px solid lightgrey;
+
+}
+.second{
+    width:50%;
+    height:100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+}
+.sub{
+    width:100%;
+    height:50px;
+    margin-bottom: 50px;
+    margin-left:100px;
+}
+.select-op{
+  width:80%;
+  height:40px;
+  text-align: center;
+  font-size: 20px;
+  margin-top: 20px;
+  background-color:aliceblue;
+  box-shadow: 0 0 5px lightgrey,0 0 25px lightgrey;
+  outline: none;
+  border:blueviolet;
+  
+  
+}
+.button{
+  width:80%;
+  height:40px;
+
+  text-align: center;
+  font-size: 20px;
+  margin-top: 40px;
+  background-color:lightblue;
+  box-shadow: 0 0 5px lightgrey,0 0 25px lightgrey;
+  outline: none;
+  border:blueviolet;
+  border-radius: 20px;
+}
+.button:hover{
+  background-color: aliceblue;
+  transform: scaleY(120%) translateY(20%);
+}
+label{
+  font-size: 1.5rem;
+  font-weight: bolder;
+  margin-top: 30px;  
+}
+.mark{
+    width: 300px;
+    height:270px;
+    
+    box-shadow: 0 0 5px lightgrey,0 0 25px lightgrey;
+    background-color: aliceblue;
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    font-weight: bolder;
+    text-align: center;
+}
+.file{
+    display: none;
+}
+.file1{
+  width:80%;
+  height:40px;
+  text-align: center;
+  font-size: 20px;
+  color:red;
+  margin-top: 20px;
+  background-color:aliceblue;
+  box-shadow: 0 0 5px lightgrey,0 0 25px lightgrey;
+  outline: none;
+  border:blueviolet;
+   
+  cursor: pointer;
+}
+.file2{
+    width:80%;
+  height:40px;
+  text-align: center;
+  font-size: 20px;
+  color:red;
+  margin-top: 20px;
+  background-color:aliceblue;
+  box-shadow: 0 0 5px lightgrey,0 0 25px lightgrey;
+  outline: none;
+  border:blueviolet;
+   
+  cursor: pointer;
+  display: none;
+}
+.info{
+    width:500px;
+    height:600px;
+     
+    box-shadow: 0 0 2px lightgrey,0 0 5px lightgrey;
+    background-color: #1679AB;
+    margin-right: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #96EFFF;
+    font-size: 1.5rem;
+    animation: right 2s ease forwards;
+}
+@keyframes  right {
+    0%{
+        transform: translateX(-30%);
+        opacity: 0;
+    }
+    100%{
+        transform: translateX(0%);
+        opacity: 1;
+    }
+    
+}
+.add{
+    width:30px;
+    height:30px;
+    border-radius: 50%;
+    background-color:lightgreen;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: aliceblue;
+    font-size: 1.5rem;
+    font-weight: bolder;
+    margin-top: 10px;
+    cursor: pointer;
+
+
+}
+</style>
+<body>
+    
+    <nav class="navbar navbar bg-transparent border-bottom text-dark ">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#"><img class="logo" src="{{url_for('static',filename='image/logo.jpg')}}" alt=""></a>
+          
+         
+          <button  class="navbar-toggler " type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
+            <span class="navbar-toggler-icon "></span>
+          </button>
+          <div class="slidebar offcanvas offcanvas-start" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+            <div class="offcanvas-header text-white border-bottom">
+              <h5 class="offcanvas-title" id="offcanvasNavbarLabel"><img class="logo" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQDMyJKxlzhQXrqSwsx4D9KPOyPVqjugsx5ZA8VSRzqJQ&s" alt=""></h5>
+              <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+            <div class="offcanvas-body">
+              <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                <li class="nav-item">
+                  <a class="nav-link" aria-current="page" href="#" style="color:white;">HOME</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link " href="{{url_for('stlogin')}}" style="color:white;">LOGIN</a>
+                </li>
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="color:white;">
+                    OTHERS
+                  </a>
+                  <ul class="dropdown-menu bg-transparent">
+                    <li><a class="dropdown-item" href="#" style="color:white;">CONTACT</a></li>
+                    <li><a class="dropdown-item" href="#" style="color:white;">STATUS</a></li>
+                    <li>
+                      <hr class="dropdown-divider text-white border-bottom">
+                    </li>
+                    <li><a class="dropdown-item" href="#"><button class="btn btn-danger">Logout</button></a></li>
+                  </ul>
+                </li>
+              </ul>
+              
+            </div>
+          </div>
+        </div>
+      </nav>
+       <!--Nav bar ends-->
+     
+     <div class="body1">
+
+            
+       
+     
+     <!--Sap-container ends  .-->
+
+   <div class="cal-container">
+       <div class="cal">
+        <form action="/home" method="POST" enctype="multipart/form-data">
+        <div class="box">
+        <div class="first">
+        <label for="first-dropdown">Activity:</label>
+        <select id="first-dropdown"class="select-op" name="act" required onchange="populateSecondDropdown()">
+            <option value="NULL" selected>--SELECT ACTIVITY--</option>
+            <option value="Paper Presentation">Paper Presentation</option>
+            <option value="Project Presentation">Project Presentation</option>
+            <option value="Techno Managerial Events">Techno Managerial Events</option>
+            <option value="Sporst & Games">Sporst & Games</option>
+            <option value="Membership">Membership</option>
+            <option value="Leadership">Leadership</option>
+            <option value="Online Course">Online Course</option>
+            <option value="Project to patent">Project to paper/patent/copyright</option>
+            <option value="Govt Exams">Govt Exams</option>
+            <option value="Placement and Internship">Placement and Internship</option>
+            <option value="Enterpreneurship">Enterpreneurship</option>
+            <option value="Social Acitivites">Social Acitivites</option>
+            <option value="NULL">NIL</option>
+
+          
+        </select>
+        
+        <label for="second-dropdown" data-bs-toggle="dropdown">Status for Activity:</label>
+        <select id="second-dropdown" class="select-op"required data-bs-toggle="dropdown" name="status" onchange="selectdrop()" >
+             <option value="NULL" selected>--SELECT STATUS--</option>
+              
+        </select>
+        <label for="sap" data-bs-toggle="dropdown">SAP for Activity:</label>
+        <input type="text" class="select-op"required name="sap" id="sap"readonly >
+        <label for="sap" data-bs-toggle="dropdown">Upload your proof:</label>
+        <label for="up"  class="file1"><i class="fa-solid fa-cloud-arrow-up"></i>Upload</label>
+        <input type="file" name="images"required id="up" class="file" >
+        </div>
+
+         <div class="second">
+            <label for="sap" data-bs-toggle="dropdown">Select College:</label>
+            <select id="third-dropdown"class="select-op" required name="college"  >
+                <option value="NULL" selected>--SELECT ACTIVITY--</option>
+                <option value="IITM">IIT Madras</option>
+                <option value="IITR">IIT Roorkee</option>
+                <option value="PSGT">PSG College of Tech</option>
+                <option value="PSGiT">PSG iTech</option>
+                <option value="NITT">NIT Trichy</option>
+                <option value="SSN">SSN</option>
+                <option value="SNU">SNU</option>
+                <option value="NITC">NIT Calicut</option>
+                <option value="GCT">Government College of Technology</option>
+                <option value="MIT">Manipal Institute of Technology</option>
+                <option value="BIT">Birla Institute of Technology</option>
+                <option value="AVV">Amrita Vishwa Vidyapeetham</option>
+         
+              
+            </select>
+            <label for="sap" data-bs-toggle="dropdown">Select Date:</label>
+            <input type="date" class="select-op" required name="date">
+            <label for="sap" data-bs-toggle="dropdown">Event Name:</label>
+             <input type="text" class="select-op" required name="event" >
+         </div>
+        </div>
+        <div class="sub">
+        <input type="submit" class="button" value="Submit" onclick="send()"></div>
+     
+      </form>
+       </div>
+
+       <!--Sap box-->
+
+
+   </div> <!--sesseion name-->
+      
+   <div class="sap-container">
+    <div class="profile">
+    <span><i class="fa-solid fa-user"></i></span>
+     <h1 class="name">{{session['name']}}</h1>
+     <h1 class="name">{{session['roll']}}</h1>
+     
+      
+    </div>
+    <div class="mark">
+        SAP:{{session['sap']}}
+       </div>
+   </div>
+    </div><!--Main div !!!!!-->
+</body>
+</html>

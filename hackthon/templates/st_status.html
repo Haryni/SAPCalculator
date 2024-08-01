@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Teacher Status </title>
+</head>
+<style>
+*{
+    margin:0;
+    padding:0;
+
+}
+body{
+    background-color:aliceblue;
+    opacity:1;
+    height: auto;
+    
+}
+.nav-item{
+    margin-left:60px;
+    color:white;
+    font-size: 1.4rem;
+}
+.nav-link:hover{
+    color:aqua;
+}
+.nav-link{
+    color:black;
+    font-family: "Jost", sans-serif;
+    font-optical-sizing: auto;
+    font-weight:bolder;
+    font-style: normal;
+    
+}
+
+.dropdown-item{
+    color:black;
+    
+}
+.dropdown-item:hover{
+    color:aqua;
+    background: none;
+}
+
+.logo{
+    width:60px;
+    height:60px;
+    border-radius: 50%;
+}
+ 
+.slidebar{
+    background-color: transparent;
+    color:white;
+    border-radius: 20px;
+    backdrop-filter: blur(10px);
+
+}
+.btn-close{
+    color:white;
+}
+.body1{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 50px;
+}
+.st_box{
+    width:90%;
+    height:400px;
+    background-color: aliceblue;
+    box-shadow: 0 0 5px lightgrey,0 0 25px lightgrey;
+    border-radius: 20px;
+
+}
+.st_box p{
+    margin-left: 30px;
+    font-size: 2rem;
+    font-weight: bolder;
+
+}
+
+
+</style>
+<body>
+    <nav class="navbar navbar bg-transparent border-bottom text-dark ">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#"><img class="logo" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQDMyJKxlzhQXrqSwsx4D9KPOyPVqjugsx5ZA8VSRzqJQ&s" alt=""></a>
+          
+         
+          <button  class="navbar-toggler " type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
+            <span class="navbar-toggler-icon "></span>
+          </button>
+          <div class="slidebar offcanvas offcanvas-start" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+            <div class="offcanvas-header text-white border-bottom">
+              <h5 class="offcanvas-title" id="offcanvasNavbarLabel"><img class="logo" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQDMyJKxlzhQXrqSwsx4D9KPOyPVqjugsx5ZA8VSRzqJQ&s" alt=""></h5>
+              <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+            <div class="offcanvas-body">
+              <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                <li class="nav-item">
+                  <a class="nav-link" aria-current="page" href="#" style="color:white;">HOME</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link " href="{{url_for('stlogin')}}" style="color:white;">LOGIN</a>
+                </li>
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="color:white;">
+                    OTHERS
+                  </a>
+                  <ul class="dropdown-menu bg-transparent">
+                    <li><a class="dropdown-item" href="#" style="color:white;">CONTACT</a></li>
+                    <li><a class="dropdown-item" href="#" style="color:white;">STATUS</a></li>
+                    <li>
+                      <hr class="dropdown-divider text-white border-bottom">
+                    </li>
+                    <li><a class="dropdown-item" href="#"><button class="btn btn-danger">Logout</button></a></li>
+                  </ul>
+                </li>
+              </ul>
+              
+            </div>
+          </div>
+        </div>
+      </nav>
+      <!--   NAV Ends     -->
+
+
+      <div class="body1">
+
+      <div class="st_box">
+    
+        {% if data %}
+            <p>Activity: {{ data[0]['act'] }}</p>
+             
+            {% endif %}
+         
+        <p>Updated Status: {{ data[0]['ac_status'] }}</p>
+ 
+      </div>
+
+    
+    
+
+    </div><!--Mani div endpoint-->
+</body>
+</html>

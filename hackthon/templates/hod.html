@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hod's page</title>
+<style>
+ 
+  * {
+  box-sizing: border-box;
+}
+input{
+    justify-content: center;
+    align-items: center;
+    gap:50px;
+
+}
+#myInput {
+  background-image: url('/css/searchicon.png');
+  background-position: 10px 10px;
+  background-repeat: no-repeat;
+  width: 100%;
+  font-size: 16px;
+  padding: 12px 20px 12px 40px;
+  border: 1px solid #ddd;
+  margin-bottom: 12px;
+}
+
+#myTable {
+  border-collapse: collapse;
+  width: 100%;
+  border: 1px solid #ddd;
+  font-size: 18px;
+}
+
+#myTable th, #myTable td {
+  text-align: left;
+  padding: 12px;
+}
+
+#myTable tr {
+  border-bottom: 1px solid #ddd;
+}
+
+#myTable tr.header, #myTable tr:hover {
+  background-color: #f1f1f1;
+}
+.dabba{
+  display: flex
+}
+
+</style>
+</head>
+<body>
+
+<h2>Student Activities</h2>
+<div class="dabba">
+<input type="text" id="searchCol1" placeholder="Search by Name">
+<input type="text" id="searchCol6" placeholder="Search By Roll">
+<input type="text" id="searchCol2" placeholder="Search by Year">
+<input type="text" id="searchCol3" placeholder="Search by Event">
+<input type="text" id="searchCol4" placeholder="Search by Inside/Outside">
+<input type="text" id="searchCol5" placeholder="Search by Month">
+</div>
+<br><br><br>
+<table id="myTable">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Roll No</th>
+      <th>Year</th>
+      <th>Event</th>
+      <th>Inside/Outside</th>
+      <th>Month</th>
+      <th>SAP</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Hariharan</td>
+      <td>23AUR011</td>
+      <td>2</td>
+      <td>Paper Presentation</td>
+      <td>Inside</td>
+      <td>June</td>
+      <td>30</td>
+    </tr>
+    <tr>
+      <td>Sai Sanjay</td>
+      <td>23MTR086</td>
+      <td>3</td>
+      <td>Project Presentation</td>
+      <td>Outside</td>
+      <td>June</td>
+      <td>20</td>
+    </tr>
+    <tr>
+      <td>Sham</td>
+      <td>23AUR024</td>
+      <td>2</td>
+      <td>Project Presentation</td>
+      <td>Inside</td>
+      <td>April</td>
+      <td>40</td>
+    </tr>
+  </tbody>
+</table>
+
+<script>
+  // Get the input fields
+  var inputCol1 = document.getElementById("searchCol1");
+  var inputCol6 = document.getElementById("searchCol6");
+  var inputCol2 = document.getElementById("searchCol2");
+  var inputCol3 = document.getElementById("searchCol3");
+  var inputCol4 = document.getElementById("searchCol4");
+  var inputCol5 = document.getElementById("searchCol5");
+
+  // Get the table rows
+  var tableRows = document.querySelectorAll("#myTable tbody tr");
+
+  // Add event listeners to input fields
+  inputCol1.addEventListener("input", filterTable);
+  inputCol6.addEventListener("input", filterTable);
+  inputCol2.addEventListener("input", filterTable);
+  inputCol3.addEventListener("input", filterTable);
+  inputCol4.addEventListener("input", filterTable);
+  inputCol5.addEventListener("input", filterTable);
+
+  function filterTable() {
+    var filterCol1 = inputCol1.value.toUpperCase();
+    var filterCol6 = inputCol6.value.toUpperCase();
+    var filterCol2 = inputCol2.value.toUpperCase();
+    var filterCol3 = inputCol3.value.toUpperCase();
+    var filterCol4 = inputCol4.value.toUpperCase();
+    var filterCol5 = inputCol5.value.toUpperCase();
+
+    tableRows.forEach(function(row) {
+      var col1 = row.cells[0].textContent.toUpperCase();
+      var col6 = row.cells[1].textContent.toUpperCase();
+      var col2 = row.cells[2].textContent.toUpperCase();
+      var col3 = row.cells[3].textContent.toUpperCase();
+      var col4 = row.cells[4].textContent.toUpperCase();
+      var col5 = row.cells[5].textContent.toUpperCase();
+
+      if (col1.includes(filterCol1) && col6.includes(filterCol6) && col2.includes(filterCol2) && col3.includes(filterCol3) && col4.includes(filterCol4) && col5.includes(filterCol5)) {
+        row.style.display = "";
+      } else {
+        row.style.display = "none";
+      }
+    });
+  }
+</script>
+
+</body>
+</html>

@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>STUDENTS</title>
+<style>
+    
+    body {
+            
+      background-color: #d9e8f8;
+  font-family: 'lato', sans-serif;
+
+}
+         
+  * {
+  box-sizing: border-box;
+}
+input{
+    justify-content: center;
+    align-items: center;
+    gap:50px;
+    box-shadow: #205295 3px 3px 19px 0px inset, #205295 -3px -3px 19px 1px inset;
+        box-shadow: #205295 3px 3px 19px 0px ,#205295 -3px -3px 19px 0px;
+
+}
+#searchcol1{
+    background-color: #060606;
+    border: 5px solid #ddd;
+
+}
+.navbar {
+  overflow: hidden;
+  background-color: #0A2647; 
+  color: aliceblue;
+  box-shadow: 0 8px 16px 0 #9AC8CD; 
+}
+
+.navbar .logo {
+  display: inline-block;
+  height: 50px; 
+  margin-right: 20px;
+  font-weight: bold;
+  box-shadow: #205295 3px 3px 19px 0px inset, #205295 -3px -3px 19px 1px inset;
+        box-shadow: #205295 3px 3px 19px 0px ,#205295 -3px -3px 19px 0px;
+}
+
+.navbar a {
+  float: left;
+  display: block;
+  color: aliceblue;
+  text-align: center;
+  padding: 14px 20px;
+  text-decoration: none;
+}
+
+.navbar a:hover {
+  background-color: rgba(255, 255, 255, 0.5); 
+  color: black;
+}
+.container {
+  margin: 50px auto;
+  width: 600px;
+  perspective: 1000px; 
+}
+
+.title {
+  text-align: center;
+  padding: 20px;
+  background-color: #f7eadb;
+  color: rgb(1, 4, 41);
+  border-radius: 40px;
+  transform-origin: center; 
+  box-shadow: #205295 3px 3px 19px 0px inset, #205295 -3px -3px 19px 1px inset;
+        box-shadow: #205295 3px 3px 19px 0px ,#205295 -3px -3px 19px 0px
+}
+.container {
+    height: fit-content;
+  max-width: fit-content;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.table-header {
+    background-color:#0A2647;
+    font-size: 14px;
+    text-transform: uppercase;
+    text-align: center;
+    letter-spacing: 0.03em;
+    color: aliceblue;
+  }
+
+#myTable {
+    box-shadow: #205295 3px 3px 19px 0px inset, #205295 -3px -3px 19px 1px inset;
+        box-shadow: #205295 3px 3px 19px 0px ,#205295 -3px -3px 19px 0px;
+  
+  width: 100%;
+  border: 1px solid #070606;
+  background-color: #f7eadb;
+  font-size: 18px;
+}
+
+#myTable th, #myTable td {
+  text-align: left;
+  padding: 12px;
+}
+
+#myTable tr {
+  border-bottom: 1px solid #070707;
+}
+
+
+</style>
+</head>
+<body>
+  <div class="navbar" style="display:flex;">
+    <div>
+    <img src="{{url_for('static',filename='image/logo.jpg')}}" alt="Logo" class="logo">
+    </div>
+    <a href="">KONGU ENGINEERNG COLLEGE</a>
+    <a href="">SWITCH</a>
+   
+  </div>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link rel="stylesheet" href="LOGO.png">
+<br><br>
+<html lang="en">
+    <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      
+      <link rel="stylesheet" href="styles.css">
+    </head>
+    <body>
+    
+    <div class="container">
+      <h1 class="title">Student Activity point-student</h1>
+    </div>
+
+
+
+<br><br><br>
+
+<table id="myTable">
+  <thead>
+ 
+          <tr class="table-header">
+    
+      <th>S.no</th>
+      
+      <th>event</th>
+
+      
+      <th>type</th>
+      <th>status</th>
+      <th>points</th>
+      <th>proof</th>
+      <th>delete</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% if sddata %}
+          {% for data in sddata %}
+           <tr class="table-row">
+             <td>{{data['id']}}</td>
+      
+             <td>{{data['act']}}</td>
+             <td>{{data['status']}}</td>
+             <td>{{data['sap']}}</td>
+   
+             <td></td>
+          {% endfor %}
+    {%endif%}
+    {%if imgdata%}
+         {%for img in imgdata%}
+             <td><a href="{{ url_for('static', filename='image/'+ img['filename']) }}">View</a></td>
+             <td><button id="al" onclick="deleteRow(this)">Delete</button></div>
+            </tr>
+         {%endfor%}
+    {%endif%}
+    
+  </tbody>
+</table>
+<script>
+    function deleteRow(button){
+      var row = button.parentNode.parentNode;
+      var tbody = row.parentNode;
+      tbody.removeChild(row);
+    }
+
+
+
+
+    
+  
+    
+
+  
+  </script>
+
+
+
+
+</body>
+</html>
+
+ 
+
+  
